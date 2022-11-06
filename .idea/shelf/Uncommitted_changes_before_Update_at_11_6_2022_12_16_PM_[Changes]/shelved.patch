@@ -1,0 +1,43 @@
+Index: src/test/java/testcases/LaunchBrowser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import com.microsoft.playwright.*;\r\n\r\nimport java.awt.*;\r\n\r\npublic class LaunchBrowser {\r\n    public static void main(String[] args) throws InterruptedException {\r\n\r\n        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();\r\n        double width = screenSize.getWidth();\r\n        double height = screenSize.getHeight();\r\n\r\n        Playwright playwright = Playwright.create();\r\n        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));\r\n        BrowserContext browserContext = browser.newContext( new Browser.NewContextOptions().setViewportSize((int)width, (int)height));\r\n        Page page = browserContext.newPage();\r\n        page.navigate(\"https://way2automation.com\");\r\n        System.out.println(page.title());\r\n        Thread.sleep(2000);\r\n        page.close();\r\n        playwright.close();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/testcases/LaunchBrowser.java b/src/test/java/testcases/LaunchBrowser.java
+--- a/src/test/java/testcases/LaunchBrowser.java	(revision 7b69952163166803188c1a61bdaaee85bad3da66)
++++ b/src/test/java/testcases/LaunchBrowser.java	(date 1667729712674)
+@@ -10,7 +10,9 @@
+         double height = screenSize.getHeight();
+ 
+         Playwright playwright = Playwright.create();
+-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
++        //Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
++        Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
++
+         BrowserContext browserContext = browser.newContext( new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
+         Page page = browserContext.newPage();
+         page.navigate("https://way2automation.com");
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f2dea21a-0517-4020-b1ec-43cef47a5e74\" name=\"Changes\" comment=\"\">\r\n\r\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"recentBranches\">\r\n      <RecentBranches>\r\n        <option name=\"branchesForRepo\">\r\n          <list>\r\n            <RecentBranchesForRepo>\r\n              <option name=\"branches\">\r\n                <list>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"LaunchBrowser\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1667573004\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"master\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1667573003\" />\r\n                  </RecentBranch>\r\n                </list>\r\n              </option>\r\n              <option name=\"repositoryRootUrl\" value=\"file://$PROJECT_DIR$\" />\r\n            </RecentBranchesForRepo>\r\n          </list>\r\n        </option>\r\n      </RecentBranches>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2H5NySE7NN1Fw80EL1evIHAvjhE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"LaunchBrowser\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"testcases.LaunchBrowser\" />\r\n      <module name=\"PlaywrightLearning\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"testcases.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.LaunchBrowser\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f2dea21a-0517-4020-b1ec-43cef47a5e74\" name=\"Changes\" comment=\"\" />\r\n      <created>1667571242689</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1667571242689</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7b69952163166803188c1a61bdaaee85bad3da66)
++++ b/.idea/workspace.xml	(date 1667729518805)
+@@ -4,10 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f2dea21a-0517-4020-b1ec-43cef47a5e74" name="Changes" comment="">
+-
+-      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java" afterDir="false" />
+-    </list>
++    <list default="true" id="f2dea21a-0517-4020-b1ec-43cef47a5e74" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
