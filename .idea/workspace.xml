@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="f2dea21a-0517-4020-b1ec-43cef47a5e74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/LaunchBrowser.java" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +38,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="launching_simple_way" />
+                    <option name="lastUsedInstant" value="1667733087" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="launch_diff_browsers" />
                     <option name="lastUsedInstant" value="1667729674" />
