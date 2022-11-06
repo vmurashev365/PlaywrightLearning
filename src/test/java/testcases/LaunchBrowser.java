@@ -3,6 +3,7 @@ package testcases;
 import com.microsoft.playwright.*;
 
 import java.awt.*;
+import java.nio.file.Paths;
 
 public class LaunchBrowser {
     public static void main(String[] args) throws InterruptedException {
@@ -12,7 +13,9 @@ public class LaunchBrowser {
         double height = screenSize.getHeight();
 
         Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        //Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        //Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setExecutablePath(Paths.get("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")));
         BrowserContext browserContext = browser.newContext( new Browser.NewContextOptions().setViewportSize((int)width, (int)height));
         Page page = browserContext.newPage();
         page.navigate("https://way2automation.com");
