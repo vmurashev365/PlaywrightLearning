@@ -21,6 +21,14 @@ public class LaunchBrowser {
         page.navigate("https://way2automation.com");
         System.out.println(page.title());
         Thread.sleep(2000);
+        page.navigate("https://google.com");
+        Thread.sleep(1000);
+        page.goBack();
+        Thread.sleep(1000);
+        page.goForward();
+        Thread.sleep(1000);
+        page.reload();
+        Thread.sleep(1000);
         page.close();
         playwright.close();
     }
