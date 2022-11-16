@@ -23,9 +23,9 @@ public class LaunchBrowser {
         //Thread.sleep(2000);
         page.navigate("https://google.com");
         //Thread.sleep(1000);
-        page.goBack(new Page.GoBackOptions().setTimeout(500));
+        page.goBack(new Page.GoBackOptions().setTimeout(5000));
         //Thread.sleep(1000);
-        page.goForward(new Page.GoForwardOptions().setTimeout(500));
+        page.goForward(new Page.GoForwardOptions().setTimeout(5000));
         //Thread.sleep(1000);
         page.reload();
         //Thread.sleep(1000);
